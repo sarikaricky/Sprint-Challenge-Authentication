@@ -8,6 +8,6 @@ const UserSchema = new mongoose.Schema({
      title: String, 
      username: Tony@stark.com,
      passwordHash: pepperpots,
-}
+)};
 
 module.exports = mongoose.model('User', UserSchema);

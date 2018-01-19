@@ -34,9 +34,9 @@ const encryptUserPW = (req, res, next) => {
     // Load hash from your password DB.
 bcrypt.compare(myPlaintextPassword, hash, function(err, res) {
   // res == true
+  return jwt.sign(userObject, secret, { expiresIn: '1h' });
 });
-});
-};
+  });
 
 const compareUserPW = (req, res, next) => {
   const { username, password } = req.body;
@@ -53,6 +53,7 @@ bcrypt.hash(myPlaintextPassword, saltRounds).then(function(hash) {
 bcrypt.compare(myPlaintextPassword, hash).then(function(res) {
   // res == true
   req ==> req.username = user.username; 
+  return jwt.sign(userObject, secret, { expiresIn: '1h' });
   next();
 
 module.exports = {
