@@ -4,10 +4,13 @@ const Schema = mongoose.Schema;
 const UserSchema = new mongoose.Schema({
   // create your user schema here.
 });new Schema({
-     index: true, 
+  username: {}
+     unique: true, 
      title: String, 
-     username: Tony@stark.com,
-     passwordHash: pepperpots,
-)};
+
+  password: {
+     type: String,
+     required: true,
+
 
 module.exports = mongoose.model('User', UserSchema);
